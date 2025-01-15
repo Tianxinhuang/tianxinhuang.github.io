@@ -34,11 +34,7 @@ ga('send', 'pageview');
 -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link
-    rel="stylesheet"
-    href="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Widgets/widgets.css"
-  />
-  <script src="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Cesium.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
 
 <script type="text/javascript" src="./files/jquery.min.js"></script></head>
 <body>
@@ -361,35 +357,62 @@ ga('send', 'pageview');
 </table>
 
 <h1>Where have I been?</h1>
-  <div id="cesiumContainer"></div>
+<script>
+  // 初始化场景、相机和渲染器
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
 
-  <script>
-    // 初始化 Cesium Viewer
-    const viewer = new Cesium.Viewer('cesiumContainer');
+  // 添加地球
+  const geometry = new THREE.SphereGeometry(5, 64, 64);
+  const texture = new THREE.TextureLoader().load('https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg');
+  const material = new THREE.MeshBasicMaterial({ map: texture });
+  const earth = new THREE.Mesh(geometry, material);
+  scene.add(earth);
 
-    // 去过的地方（经纬度数组）
-    const locations = [
-      { lon: -74.0060, lat: 40.7128, name: "纽约, 美国" },
-      { lon: 2.3522, lat: 48.8566, name: "巴黎, 法国" },
-      { lon: 139.6917, lat: 35.6895, name: "东京, 日本" },
-      { lon: 151.2093, lat: -33.8688, name: "悉尼, 澳大利亚" }
-    ];
+  // 添加去过地方的红点
+  const locations = [
+    { lat: 40.7128, lon: -74.0060 }, // 纽约
+    { lat: 48.8566, lon: 2.3522 },   // 巴黎
+    { lat: 35.6895, lon: 139.6917 }, // 东京
+    { lat: -33.8688, lon: 151.2093 } // 悉尼
+  ];
 
-    // 添加标记
-    locations.forEach(location => {
-      viewer.entities.add({
-        position: Cesium.Cartesian3.fromDegrees(location.lon, location.lat),
-        point: { pixelSize: 10, color: Cesium.Color.RED },
-        label: {
-          text: location.name,
-          font: '14pt sans-serif',
-          fillColor: Cesium.Color.WHITE
-        }
-      });
-    });
+  const addMarker = (lat, lon) => {
+    const markerGeometry = new THREE.SphereGeometry(0.1, 32, 32);
+    const markerMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+    const marker = new THREE.Mesh(markerGeometry, markerMaterial);
 
-  </script>
+    // 将经纬度转换为3D坐标
+    const radius = 5; // 地球半径
+    const phi = (90 - lat) * (Math.PI / 180); // 纬度转换
+    const theta = (lon + 180) * (Math.PI / 180); // 经度转换
 
+    marker.position.set(
+      radius * Math.sin(phi) * Math.cos(theta),
+      radius * Math.cos(phi),
+      radius * Math.sin(phi) * Math.sin(theta)
+    );
+    scene.add(marker);
+  };
+
+  locations.forEach(loc => addMarker(loc.lat, loc.lon));
+
+  // 调整相机位置
+  camera.position.z = 10;
+
+  // 添加旋转动画
+  const animate = () => {
+    requestAnimationFrame(animate);
+    earth.rotation.y += 0.001; // 地球自转
+    renderer.render(scene, camera);
+  };
+
+  animate();
+</script>
+  
 <div id="footer">
 	<div id="footer-text"></div>
 </div>    
