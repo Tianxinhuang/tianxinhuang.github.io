@@ -32,6 +32,14 @@ ga('send', 'pageview');
 
 </script>
 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet"
+    href="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Widgets/widgets.css"
+  />
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Cesium.js"></script>
+
 <script type="text/javascript" src="./files/jquery.min.js"></script></head>
 <body>
 <div id="layout-content" style="margin-top:25px">
@@ -75,7 +83,9 @@ ga('send', 'pageview');
     My current research interests includes but not limited on:
     </p>
     <p>
-    <b>3D Point Cloud Analysis, 3D Face Reconstruction, Neural Rendering</b>.
+    <b>3D Point Cloud Geometry Analysis</b>.
+    <b>3D Human Face Modeling</b>
+    <b>3D Scene Understanding and Reconstruction</b>
     </p>
   	<p></p>
 <p></p>
@@ -348,10 +358,44 @@ ga('send', 'pageview');
 	</tbody>
 </table>
 
+<h1>Where have I been?</h1>
+  <div id="cesiumContainer"></div>
+
+  <script>
+    // 初始化 Cesium Viewer
+    const viewer = new Cesium.Viewer('cesiumContainer');
+
+    // 去过的地方（经纬度数组）
+    const locations = [
+      { lon: -74.0060, lat: 40.7128, name: "纽约, 美国" },
+      { lon: 2.3522, lat: 48.8566, name: "巴黎, 法国" },
+      { lon: 139.6917, lat: 35.6895, name: "东京, 日本" },
+      { lon: 151.2093, lat: -33.8688, name: "悉尼, 澳大利亚" }
+    ];
+
+    // 添加标记
+    locations.forEach(location => {
+      viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(location.lon, location.lat),
+        point: { pixelSize: 10, color: Cesium.Color.RED },
+        label: {
+          text: location.name,
+          font: '14pt sans-serif',
+          fillColor: Cesium.Color.WHITE
+        }
+      });
+    });
+
+    // 飞到某个视图
+    viewer.camera.flyTo({
+      destination: Cesium.Cartesian3.fromDegrees(-74.0060, 40.7128, 3000000)
+    });
+  </script>
+
 <div id="footer">
 	<div id="footer-text"></div>
 </div>    
-        © Tianxin Huang | Last updated: April 2024
+        © Tianxin Huang | Last updated: Jan 2025
 </div>
 
 </body></html>
