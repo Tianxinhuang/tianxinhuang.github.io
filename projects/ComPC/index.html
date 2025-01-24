@@ -89,10 +89,7 @@
             </span>
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>National University of Singapore</span>&nbsp;&nbsp;&nbsp;&nbsp;
-            
-            <span class="author-block"><sup>2</sup>Nanjing University</span>
-            
+            <span class="author-block">National University of Singapore</span>&nbsp;&nbsp;&nbsp;&nbsp;            
           </div>
 
           <div class="column has-text-centered">
@@ -234,6 +231,35 @@ Experimental results on both synthetic and real-world scanned point clouds demon
   </div>
 </section> -->
 
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Results. -->
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Methodology</h2>
+
+        <!-- <h3 class="title is-4">Comparison wtih 2DGS</h3> -->
+        <!--<div class="content has-text-justified">
+          <p>
+            In the comparisons, face textures extracted from source images with noticeable external occlusions are used to synthesize target images free of occlusions. The results can confirm that our method effectively recovers clean face textures from images impacted by shadows caused by external or self-occlusions. 
+          </p>
+
+	</div> -->
+
+	<p style="text-align: center; font-weight: bold;">
+          <strong>The pipeline of our methodology.</strong>
+        </p>
+	<div style="text-align: center; width: 100%;">
+        <img src="./resources/framework.png" style="width: 100%;">
+	</div>
+	<div class="content has-text-justified">
+          <p>
+          Illustration of our framework. In Partial Gaussian Initialization (PGI), Reference Viewpoint Estimation estimates a camera pose $V_p$ where $P_{in}$ can be most completely observed. We initialize 3D Gaussians $G_{in}$ from $P_{in}$ and render the reference image $I_{in}$ under $V_p$. In Zero-shot Fractal Completion (ZFC), 3D Gaussians $G_m$ begins with an initialization using noisy $P_{N}$ and undergoes optimization guided by view-dependent guidance from the diffusion model $f_Z$ in Zero 1-to-3 based on a randomly chosen camera pose $V_i$. Additionally, it incorporates a Preservation Constraint computed with respect to $V_p$. $G_{in}$ is mixed with $G_m$ to form $G_{all}$, introducing the partial geometry. After ZFC, we propose Point Cloud Extraction (PCE) to extract surface points, and convert them into uniform output with Grid Pulling.
+	  </p>
+        </div>
+
+
 
 
 <section class="section">
@@ -252,13 +278,13 @@ Experimental results on both synthetic and real-world scanned point clouds demon
 
 	</div> -->
 
-	<p style="text-align: center; font-weight: bold;">
+	<!--<p style="text-align: center; font-weight: bold;">
           <strong>The pipeline of our methodology.</strong>
         </p>
 	<div style="text-align: center; width: 100%;">
         <img src="./resources/framework.png" style="width: 100%;">
 	<p>Illustration of our framework. In Partial Gaussian Initialization (PGI), Reference Viewpoint Estimation estimates a camera pose $V_p$ where $P_{in}$ can be most completely observed. We initialize 3D Gaussians $G_{in}$ from $P_{in}$ and render the reference image $I_{in}$ under $V_p$. In Zero-shot Fractal Completion (ZFC), 3D Gaussians $G_m$ begins with an initialization using noisy $P_{N}$ and undergoes optimization guided by view-dependent guidance from the diffusion model $f_Z$ in Zero 1-to-3 based on a randomly chosen camera pose $V_i$. Additionally, it incorporates a Preservation Constraint computed with respect to $V_p$. $G_{in}$ is mixed with $G_m$ to form $G_{all}$, introducing the partial geometry. After ZFC, we propose Point Cloud Extraction (PCE) to extract surface points, and convert them into uniform output with Grid Pulling.</p>
-        </div>
+	</div>-->
 
 
         <p style="text-align: center; font-weight: bold;">
