@@ -338,29 +338,33 @@ Experimental results on both synthetic and real-world scanned point clouds demon
   </div>
 </section>
 
-<!-- BibTeX. 
+
+ 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{huanglearning,
-  title={Learning to Decouple the Lights for 3D Face Texture Modeling},
-  author={Huang, Tianxin and Zhang, Zhenyu and Tai, Ying and Lee, Gim Hee},
-  booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems}
-}
-</code></pre>
+    <pre><code>@article{huang2024zero,
+  title={Zero-shot Point Cloud Completion Via 2D Priors},
+  author={Huang, Tianxin and Yan, Zhiwen and Zhao, Yuyang and Lee, Gim Hee},
+  journal={arXiv preprint arXiv:2404.06814},
+  year={2024}
+}</code></pre>
   </div>
 </section>
--->
 
-<!-- <section class="section" id="Acknowledgements">
+
+<section class="section" id="Possible Future work">
   <div class="container is-max-desktop content">
-    <h2 class="title">Acknowledgements</h2>
-    We thank Christian Reiser for insightful discussions and valuable feedback throughout the project.
-    We also thank Binbin Huang for proofreading. 
-    ZY and AG are supported by the ERC Starting Grant LEGO-3D (850533) and DFG EXC number 2064/1 - project number 390727645.
-    TS is supported by a Czech Science Foundation (GACR) EXPRO grant (UNI-3D, grant no. 23-07973X).
-  </div>
-</section> -->
+    <h2 class="title">Possible Usage and Improvements</h2>
+    <ul>
+      <li>Reference View Point can be used to sceneraios requiring poses from partial 3D object observations.</li>
+      <li>Changing the 3D diffusion priors to more recent ones such as SV3D may further improve the performances.</li>
+      <li>The Modified Gaussian primitives are appropriate to extract point clouds from Gaussian Splatting.</li>
+      <li>Grid Pulling Module can be used to change quite non-uniform point clouds into uniform ones.</li>
+      <li>Based on our framework, generalizable completion methods can be proposed by distillating 2D diffusion priors directly to a network.</li>
+    </ul>
+    </div>
+</section> 
 
 <!--<section class="section" id="References">
   <div class="container is-max-desktop content">
