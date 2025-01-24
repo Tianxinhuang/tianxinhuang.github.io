@@ -52,6 +52,8 @@
   <link rel="stylesheet" href="./static/css/dics.original.css">
   <script src="./static/js/event_handler.js"></script>
   <script src="./static/js/dics.original.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   
 </head>
 <body>
@@ -255,8 +257,8 @@ Experimental results on both synthetic and real-world scanned point clouds demon
 	</div>
 	<div class="content has-text-justified">
           <p>
-          Illustration of our framework. In Partial Gaussian Initialization (PGI), Reference Viewpoint Estimation estimates a camera pose $V_p$ where $P_{in}$ can be most completely observed. We initialize 3D Gaussians $G_{in}$ from $P_{in}$ and render the reference image $I_{in}$ under $V_p$. In Zero-shot Fractal Completion (ZFC), 3D Gaussians $G_m$ begins with an initialization using noisy $P_{N}$ and undergoes optimization guided by view-dependent guidance from the diffusion model $f_Z$ in Zero 1-to-3 based on a randomly chosen camera pose $V_i$. Additionally, it incorporates a Preservation Constraint computed with respect to $V_p$. $G_{in}$ is mixed with $G_m$ to form $G_{all}$, introducing the partial geometry. After ZFC, we propose Point Cloud Extraction (PCE) to extract surface points, and convert them into uniform output with Grid Pulling.
-	  </p>
+Illustration of our framework. In Partial Gaussian Initialization (PGI), Reference Viewpoint Estimation estimates a camera pose <em>V<sub>p</sub></em> where <em>P<sub>in</sub></em> can be most completely observed. We initialize 3D Gaussians <em>G<sub>in</sub></em> from <em>P<sub>in</sub></em> and render the reference image <em>I<sub>in</sub></em> under <em>V<sub>p</sub></em>. In Zero-shot Fractal Completion (ZFC), 3D Gaussians <em>G<sub>m</sub></em> begins with an initialization using noisy <em>P<sub>N</sub></em> and undergoes optimization guided by view-dependent guidance from the diffusion model <em>f<sub>Z</sub></em> in Zero 1-to-3 based on a randomly chosen camera pose <em>V<sub>i</sub></em>. Additionally, it incorporates a Preservation Constraint computed with respect to <em>V<sub>p</sub></em>. <em>G<sub>in</sub></em> is mixed with <em>G<sub>m</sub></em> to form <em>G<sub>all</sub></em>, introducing the partial geometry. After ZFC, we propose Point Cloud Extraction (PCE) to extract surface points, and convert them into uniform output with Grid Pulling.
+</p>
         </div>
 
 
