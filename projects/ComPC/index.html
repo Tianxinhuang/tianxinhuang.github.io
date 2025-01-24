@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ComPC">
+  <meta name="keywords" content="ComPC">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deface</title>
+
+  <!-- Bootstrap -->
+  <!-- <link rel="stylesheet" href="./static/css/bootstrap-4.4.1.css"> -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/72.png">
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  
+  <script src="./static/js/app.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+
+  <link rel="stylesheet" href="./static/css/dics.original.css">
+  <script src="./static/js/event_handler.js"></script>
+  <script src="./static/js/dics.original.js"></script>
+  
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="margin-bottom: 0"><strong>Deface</strong></h1>
+          <br>
+          <h2 class="title is-3 publication-title" style="margin-top: 0; margin-bottom: 0">Learning to Decouple the Lights for 3D Face Texture Modeling</h2>
+          <br>
+          <br>
+          <h2 class="title is-4" style="margin-top: 0; margin-bottom: 0">NeurIPS 2024</h2>
+          <br>
+
+          <div class="is-size-5 publication-authors">
+
+            <span class="author-block">
+              <a href="https://tianxinhuang.github.io/">Tianxin Huang</a><sup>1</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <span class="author-block">
+              <a href="https://jokeryan.github.io/about/">Zhiwen Yan</a><sup>2</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+
+	    <span class="author-block">
+              <a href="https://yuyangzhao.com/">Yuyang Zhao</a><sup>2</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <span class="author-block">
+              <a href="https://www.comp.nus.edu.sg/~leegh/">Gim Hee Lee</a><sup>1</sup>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>National University of Singapore</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <span class="author-block"><sup>2</sup>Nanjing University</span>
+            
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://drive.google.com/file/d/13i3HeVBiqN8JXnwAzTvQrPz2rShxIhMv/view?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="https://openreview.net/pdf?id=SoUwcVplq4"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+          
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Tianxinhuang/ComPC"
+                   class="external-link button is-normal is-rounded is-dark disabled">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://niujinshuchong.github.io/mip-splatting-demo/"
+                   class="external-link button is-normal is-rounded is-dark disabled">
+                  <span class="icon">
+                      <i class="fab fa-dribbble"></i>
+                  </span>
+                  <span>Viewer</span>
+                  </a>
+              </span> -->
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+      
+          <!-- <video class="video" width="100%" id="gardenteaser" loop playsinline autoplay muted src="resources/garden_merge.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="gardenteaserMerge"></canvas> -->
+      
+          <!-- <video class="video" width="100%" id="bicycleteaser" loop playsinline autoplay muted src="resources/bicycle_merge.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="bicycleteaserMerge"></canvas> -->
+      
+          <img src="./resources/overall.png" style="transform: scale(1.);" width="643" height="542" class="center">
+          <h2 class="subtitle" style="margin-top: 25px; text-align: left;">
+          <p><strong>TL;DR:</strong>Different point cloud completion methods. (a) Existing network-based completion methods; 
+	  (b) Test-time SDS-complete<a href="https://github.com/NVlabs/sds-complete">SDS-Complete</a> with text prompts to guide Neural surface for completion; 
+	  (c) Our method based on 3D Gaussian Splatting (GS) guided by the diffusion model from <a href="https://github.com/cvlab-columbia/zero123">Zero 1-to-3</a> conditioned on the reference image rendered from partial points.</p>
+  
+	  </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top: -30px">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+	  3D point clouds directly collected from objects through sensors are often incomplete due to self-occlusion. Conventional methods for completing these partial point clouds rely on manually organized training sets and are usually limited to object categories seen during training.
+In this work, we propose a test-time framework for completing partial point clouds across unseen categories without any requirement for training.
+Leveraging point rendering via Gaussian Splatting, we develop techniques of Partial Gaussian Initialization, Zero-shot Fractal Completion, and Point Cloud Extraction that utilize priors from pre-trained 2D diffusion models to infer missing regions and extract uniform completed point clouds.
+Experimental results on both synthetic and real-world scanned point clouds demonstrate that our approach outperforms existing methods in completing a variety of objects.
+         </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+    <!-- Paper video. -->
+    <!--
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+
+<!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px">Motivation</h2>
+
+        <img src="./resources/teaser.png" class="center">
+        <div class="content has-text-justified">
+          <p style="margin-top: 30px">
+            XXX
+          </p>
+        </div>
+
+      </div>
+    </div>
+   
+
+  </div>
+</section> -->
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Results. -->
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Comparisons</h2>
+
+        <!-- <h3 class="title is-4">Comparison wtih 2DGS</h3> -->
+        <!--<div class="content has-text-justified">
+          <p>
+            In the comparisons, face textures extracted from source images with noticeable external occlusions are used to synthesize target images free of occlusions. The results can confirm that our method effectively recovers clean face textures from images impacted by shadows caused by external or self-occlusions. 
+          </p>
+
+	</div> -->
+
+	<p style="text-align: center; font-weight: bold;">
+          <strong>The pipeline of our methodology.</strong>
+        </p>
+	<div style="text-align: center; width: 100%;">
+        <img src="./resources/framework.png" style="width: 100%;">
+	<p>Illustration of our framework. In Partial Gaussian Initialization (PGI), Reference Viewpoint Estimation estimates a camera pose $V_p$ where $P_{in}$ can be most completely observed. We initialize 3D Gaussians $G_{in}$ from $P_{in}$ and render the reference image $I_{in}$ under $V_p$. In Zero-shot Fractal Completion (ZFC), 3D Gaussians $G_m$ begins with an initialization using noisy $P_{N}$ and undergoes optimization guided by view-dependent guidance from the diffusion model $f_Z$ in Zero 1-to-3 based on a randomly chosen camera pose $V_i$. Additionally, it incorporates a Preservation Constraint computed with respect to $V_p$. $G_{in}$ is mixed with $G_m$ to form $G_{all}$, introducing the partial geometry. After ZFC, we propose Point Cloud Extraction (PCE) to extract surface points, and convert them into uniform output with Grid Pulling.</p>
+        </div>
+
+
+        <p style="text-align: center; font-weight: bold;">
+          <strong>Comparisons on Synthetic Objects.</strong>
+        </p>
+        
+        <div class="content has-text-centered">
+	    <video autoplay loop muted controls style="width: 100%; height: auto;"><source src="resources/obj_quali.mp4" type="video/mp4"></video>
+          <!-- <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="resources/Truck_2dgs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+	  <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas> -->
+        </div>
+
+	<!-- <div class="content has-text-centered">
+            <video autoplay loop muted controls style="width: 100%; height: auto;"><source src="resources/vox2_seq1.mp4" type="video/mp4"></video>
+        </div>
+
+	<div class="content has-text-centered">
+            <video autoplay loop muted controls style="width: 100%; height: auto;"><source src="resources/vox2_seq2.mp4" type="video/mp4"></video>
+	</div> -->
+        
+        <!-- <div class="content has-text-centered">
+          <video class="video" width="100%" id="xyalias2" loop playsinline autoplay muted src="resources/Barn_2dgs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias2Merge"></canvas>
+        </div>
+
+        <div class="content has-text-centered">
+          <video class="video" width="100%" id="xyalias3" loop playsinline autoplay muted src="resources/Ignatius_2dgs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias3Merge"></canvas>
+        </div>
+
+        <div class="content has-text-centered">
+          <video class="video" width="100%" id="xyalias4" loop playsinline autoplay muted src="resources/Caterpillar_2dgs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias4Merge"></canvas>
+	  </div> -->
+
+        <!-- <h3 class="title is-4">Comparison wtih SuGaR</h3>
+        <div class="content has-text-justified">
+          <p>
+            Compared with SuGaR, our method can reconstruct more detailed and smooth geometry for both foreground objects and backgrounds.
+          </p>
+        </div>
+        
+        <div class="content has-text-centered">
+          <video class="video" width="100%" id="xyalias9" loop playsinline autoplay muted src="resources/compare_sugar_garden_down.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias9Merge"></canvas>
+        </div>  -->
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BibTeX. 
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{huanglearning,
+  title={Learning to Decouple the Lights for 3D Face Texture Modeling},
+  author={Huang, Tianxin and Zhang, Zhenyu and Tai, Ying and Lee, Gim Hee},
+  booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems}
+}
+</code></pre>
+  </div>
+</section>
+-->
+
+<!-- <section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    We thank Christian Reiser for insightful discussions and valuable feedback throughout the project.
+    We also thank Binbin Huang for proofreading. 
+    ZY and AG are supported by the ERC Starting Grant LEGO-3D (850533) and DFG EXC number 2064/1 - project number 390727645.
+    TS is supported by a Czech Science Foundation (GACR) EXPRO grant (UNI-3D, grant no. 23-07973X).
+  </div>
+</section> -->
+
+<!--<section class="section" id="References">
+  <div class="container is-max-desktop content">
+
+        <h3 class="title is-4">References</h3>
+        <div class="content has-text-justified">
+          <ul>
+            <li>
+              <a href="https://github.com/abdallahdib/NextFace" target="_blank">Practical face reconstruction via differentiable ray tracing</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template. 
+	    We borrowed this page from <a href="https://hlinchen.github.io/projects/VCR-GauS/">VCR-GauS</a>.
+          </p>
+        </div>
+      </div>
+        
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
